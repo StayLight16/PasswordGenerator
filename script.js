@@ -15,6 +15,18 @@ var SpecialcharConfirm;
 var NumberConfirm;
 
 
+//Javascript(JS) prompts about password length.
+function BuildPassword(){
+  PasswordLength = prompt ("Tell me how long you want your password to be (Sidenote: It has to be between 8 to 128 characters long.)");
+
+//Conditions that verify that the length of inputted password is between 8 to 128 characters. If it is not, JS will send an alert to the user & put them back on the prompt screen.
+if (PasswordLength < 8 || PasswordLength > 128) {
+  alert ("Password has to be 8 to 128 characters!");
+  BuildPassword();
+}
+
+
+
 }
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
