@@ -52,26 +52,40 @@ function RequestSpecialchar() {
 
 function CreatePassword() {
 
-  var RunCharacters = []
+var RunCharacters = []
   
-  if (UppercaseConfirm) {
-    RunCharacters = RunCharacters.concat(ThemUpperCase)
-  }
+if (UppercaseConfirm) {
+  RunCharacters = RunCharacters.concat(ThemUpperCase)
+}
   
-  if (LowercaseConfirm) {
-    RunCharacters = RunCharacters.concat(ThemLowercase)
-  }
+if (LowercaseConfirm) {
+  RunCharacters = RunCharacters.concat(ThemLowercase)
+}
   
-  if (NumberConfirm) {
-    RunCharacters = RunCharacters.concat(ThemNumbers)
-  }
+if (NumberConfirm) {
+  RunCharacters = RunCharacters.concat(ThemNumbers)
+}
   
-  if (SpecialcharConfirm) {
-    RunCharacters = RunCharacters.concat(ThemSpecchar)
-  }
+if (SpecialcharConfirm) {
+  RunCharacters = RunCharacters.concat(ThemSpecchar)
+}
   
-  console.log(RunCharacters);
+console.log(RunCharacters);
 
+//Code below creates desired password//
+
+
+var RunPassword = "";
+
+for (i = 0; i < passLength; i++) {
+  RunPassword = RunPassword + RunCharacters[Math.floor(math.random() * passLength.length)];
+  console.log(RunPassword);
+}
+
+document.getElementById("#password").textContent = RunPassword;
+console.log(RunPassword);
+
+}
 
 //Questions if user wants numbers in password//
 function RequestNumbers() {
