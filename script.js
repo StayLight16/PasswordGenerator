@@ -17,14 +17,15 @@ var NumberConfirm;
 
 //Javascript(JS) prompts about password length.//
 
-function BuildPassword(){
+function RequestPasswordLength(){
   PasswordLength = prompt ("Tell me how long you want your password to be (Sidenote: It has to be between 8 to 128 characters long)!");
+
 
 //Condition that verifies that the length of password is between 8 to 128 characters. If not, JS will send an alert to the user & redirect them back to the prompt screen.
 
 if (PasswordLength < 8 || PasswordLength > 128) {
   alert ("Password has to be 8 to 128 characters!");
-  BuildPassword();
+  RequestPasswordLength();
 }
 
 return PasswordLength;
@@ -48,50 +49,70 @@ function RequestSpecialchar() {
   return SpecialcharConfirm;
 }
 
+//Questions if user wants numbers in password//
+function RequestNumbers() {
+  NumberConfirm = confirm("Do you want numbers in your password?");
+  return NumberConfirm;
+}
+
 // If proved to be true, arrays are subsequently mixed.//
 
 function CreatePassword() {
 
 var RunCharacters = []
   
-if (UppercaseConfirm) {
-  RunCharacters = RunCharacters.concat(ThemUpperCase)
-}
+if (RequestUppercase())  {
+  RunCharacters = RunCharacters.concat(ThemUppercase)
   
-if (LowercaseConfirm) {
+}
+
+
+if (RequestLowercase()) {
   RunCharacters = RunCharacters.concat(ThemLowercase)
-}
   
-if (NumberConfirm) {
+}
+
+
+if (RequestNumbers()) {
   RunCharacters = RunCharacters.concat(ThemNumbers)
 }
   
-if (SpecialcharConfirm) {
+if (RequestSpecialchar()) {
   RunCharacters = RunCharacters.concat(ThemSpecchar)
+  
+}
+
+if (RunCharacters.length < 1) {
+  alert("You must select at least one password criteria!");
+  return ""
 }
   
-console.log(RunCharacters);
+RequestPasswordLength();
 
 //Code below creates desired password//
 
 
 var RunPassword = "";
 
-for (i = 0; i < passLength; i++) {
-  RunPassword = RunPassword + RunCharacters[Math.floor(math.random() * passLength.length)];
-  console.log(RunPassword);
+for (i = 0; i < PasswordLength; i++) {
+  var number = Math.floor(Math.random() * (RunCharacters.length - 1));
+  RunPassword = RunPassword + RunCharacters[number];
 }
 
-document.getElementById("#password").textContent = RunPassword;
-console.log(RunPassword);
+ 
+return RunPassword
 
 }
 
-//Questions if user wants numbers in password//
-function RequestNumbers() {
-  NumberConfirm = confirm("Do you want numbers in your password?");
-  return NumberConfirm;
+// Write password to the #password input
+function writePassword() {
+  var password = CreatePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+
 }
+
 
 // Add event listener to generate button //
 generateBtn.addEventListener("click", writePassword);
