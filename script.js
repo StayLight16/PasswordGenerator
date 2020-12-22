@@ -66,12 +66,10 @@ if (RequestUppercase())  {
   
 }
 
-
 if (RequestLowercase()) {
   RunCharacters = RunCharacters.concat(ThemLowercase)
   
 }
-
 
 if (RequestNumbers()) {
   RunCharacters = RunCharacters.concat(ThemNumbers)
@@ -91,7 +89,6 @@ RequestPasswordLength();
 
 //Code below creates desired password//
 
-
 var RunPassword = "";
 
 for (i = 0; i < PasswordLength; i++) {
@@ -99,7 +96,6 @@ for (i = 0; i < PasswordLength; i++) {
   RunPassword = RunPassword + RunCharacters[number];
 }
 
- 
 return RunPassword
 
 }
@@ -112,7 +108,6 @@ function writePassword() {
   passwordText.value = password;
 
 }
-
 
 // Add event listener to generate button //
 generateBtn.addEventListener("click", writePassword);
