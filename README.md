@@ -1,4 +1,4 @@
-# PasswordGenerator
+# Password Generator
 
 
 Password Generator we were assigned to build had to meet the following criteria: 
