@@ -31,9 +31,12 @@ THEN the password is either displayed in an alert or written to the page
 Application uses pop-up confirm boxes to identify user's password criteria. The application then generates a random password based on user's criteria. 
 
 # Screenshots
-
+<img src = "Images/AppImage.png">
+<img src = "Images/CofirmBox.png">
+<img src = "Images/Output.png">
 
 
 In order to meet criteria, I had to complete various tasks within Javascript. I think things turned out fairly okay. This will serve as a useful exercise to sharpen my javascript coding skills. 
 
+# Live Link of Deployed App
 Deployed Version:  https://staylight16.github.io/PasswordGenerator/ 
