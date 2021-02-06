@@ -21,10 +21,17 @@ THEN a password is generated that matches the selected criteria
 WHEN the password is generated
 THEN the password is either displayed in an alert or written to the page
 ```
-Technologies Used: 
+# Technologies Used: 
 * HTML
 * CSS
 * Javascript
+
+
+# Project Explanation: 
+Application uses pop-up confirm boxes to identify user's password criteria. The application then generates a random password based on user's criteria. 
+
+# Screenshots
+
 
 
 In order to meet criteria, I had to complete various tasks within Javascript. I think things turned out fairly okay. This will serve as a useful exercise to sharpen my javascript coding skills. 
